@@ -1,0 +1,279 @@
+/* =========================================================
+   Akshita Chhabra — Portfolio Stylesheet
+   Palette:
+     Navy      #14213D  (primary / headings / header bg)
+     Teal      #2A9D8F  (accent / links / hover states)
+     Off-white #F5F6F8  (page background)
+   ========================================================= */
+
+:root {
+  --color-navy: #14213D;
+  --color-navy-soft: #1F3358;
+  --color-teal: #2A9D8F;
+  --color-teal-dark: #218074;
+  --color-bg: #F5F6F8;
+  --color-card: #FFFFFF;
+  --color-text: #26313F;
+  --color-text-muted: #5B6472;
+  --color-border: #E1E4E9;
+
+  --font-heading: Georgia, 'Times New Roman', serif;
+  --font-body: 'Segoe UI', Tahoma, Verdana, sans-serif;
+
+  --max-width: 960px;
+}
+
+/* -----------------------------
+   Reset / base
+------------------------------ */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--color-navy);
+  margin: 0 0 0.5em 0;
+}
+
+p {
+  margin: 0 0 1em 0;
+  color: var(--color-text);
+}
+
+a {
+  color: var(--color-teal);
+  text-decoration: none;
+}
+
+/* -----------------------------
+   Layout helpers
+------------------------------ */
+.section-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 64px 0;
+}
+
+/* -----------------------------
+   Header
+------------------------------ */
+.site-header {
+  background-color: var(--color-navy);
+  color: #FFFFFF;
+  padding: 72px 24px 48px;
+  border-bottom: 4px solid var(--color-teal);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: left;
+}
+
+.kicker {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: #A9C6C2;
+  margin: 0 0 8px 0;
+}
+
+.site-header h1 {
+  color: #FFFFFF;
+  font-size: 2.75rem;
+  margin-bottom: 8px;
+}
+
+.tagline {
+  color: #D7DCE4;
+  font-size: 1.1rem;
+  margin-bottom: 28px;
+}
+
+.site-nav {
+  display: flex;
+  gap: 28px;
+}
+
+.site-nav a {
+  color: #FFFFFF;
+  font-weight: 600;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  color: var(--color-teal);
+  border-bottom-color: var(--color-teal);
+}
+
+/* -----------------------------
+   About
+------------------------------ */
+.about-section {
+  background-color: var(--color-bg);
+}
+
+.about-section p {
+  max-width: 70ch;
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+}
+
+/* -----------------------------
+   Skills
+------------------------------ */
+.skills-section {
+  background-color: var(--color-card);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.skills-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.skill-item {
+  background-color: var(--color-bg);
+  border-left: 4px solid var(--color-teal);
+  padding: 16px 18px;
+  font-weight: 600;
+  color: var(--color-navy);
+  border-radius: 4px;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-item:hover {
+  transform: translateX(4px);
+  background-color: #EAF4F3;
+  box-shadow: 0 4px 10px rgba(20, 33, 61, 0.12);
+}
+
+/* -----------------------------
+   Projects
+------------------------------ */
+.projects-section {
+  background-color: var(--color-bg);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.project-card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-navy);
+  border-radius: 6px;
+  padding: 24px;
+  transition: border-top-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.project-card:hover {
+  border-top-color: var(--color-teal);
+  box-shadow: 0 10px 24px rgba(20, 33, 61, 0.14);
+  transform: translateY(-4px);
+}
+
+.project-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: var(--color-text-muted);
+  font-size: 0.98rem;
+  margin-bottom: 0;
+}
+
+/* -----------------------------
+   Footer
+------------------------------ */
+.site-footer {
+  background-color: var(--color-navy);
+  color: #C6CCD6;
+  text-align: center;
+  padding: 24px;
+  font-size: 0.9rem;
+}
+
+/* -----------------------------
+   Responsive — down to ~375px
+------------------------------ */
+@media (max-width: 600px) {
+  .section {
+    padding: 44px 0;
+  }
+
+  .site-header {
+    padding: 48px 20px 32px;
+  }
+
+  .site-header h1 {
+    font-size: 2rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .site-nav {
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 400px) {
+  .section-inner {
+    padding: 0 16px;
+  }
+
+  .site-header {
+    padding: 40px 16px 28px;
+  }
+
+  .site-header h1 {
+    font-size: 1.65rem;
+  }
+
+  .kicker {
+    font-size: 0.85rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+}
